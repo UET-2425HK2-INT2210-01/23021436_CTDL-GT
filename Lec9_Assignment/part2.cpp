@@ -19,26 +19,21 @@ bool trySum(vector<int>& a, int y)
 
 void dequy(vector<int> a, int y) 
 {
-    if (y == 0) 
-    {
-        cout << "YES" << endl;
-        return;
-    }
-
     if (a.empty()) 
     {
         cout << "NO" << endl;
         return;
     }
 
-    if (trySum(a, y)) 
+    if (y == 0 || trySum(a, y)) 
     {
         cout << "YES" << endl;
         return;
     }
-
-    // Xoá phần tử đầu tiên và gọi đệ quy lại
-    a.erase(a.begin());
+    else
+    {
+	 a.erase(a.begin());
+    }
     dequy(a, y);
 }
 
