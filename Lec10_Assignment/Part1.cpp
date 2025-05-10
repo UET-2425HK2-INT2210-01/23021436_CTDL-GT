@@ -33,7 +33,7 @@ int main()
         adj[y].push_back(x); // vì đồ thị vô hướng
     }
 
-    int connectedComponents = 0;
+    int count = 0;
 
     // Duyệt tất cả các đỉnh
     for (int i = 1; i <= n; ++i) 
@@ -41,11 +41,11 @@ int main()
         if (!visited[i]) 
         {
             dfs(i);
-            ++connectedComponents;
+            ++count;
         }
     }
 
-    cout << connectedComponents << endl;
+    cout << count << endl;
 
     return 0;
 }
